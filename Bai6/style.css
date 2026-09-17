@@ -1,4 +1,4 @@
-body{
+        body{
             margin: 0;
         }
         .danh-sach-muc{
@@ -69,7 +69,6 @@ body{
         }
         .tin{
             width:95%;
-            height: 100px;
             margin: 20px auto;
             border: 1px solid #198cf0;
             border-radius: 10px;
@@ -77,7 +76,48 @@ body{
         .chuc-nang{
             width: 95%;
             margin: 5px auto;
-            border: 1px solid #198cf0;
+            padding: 5px;
             display: flex;
-            justify-content: space-beetween;
+            justify-content: space-between;
+            border-bottom: 1px solid #198cf0;
         }
+        .lien-ket-xem-tiep{
+            color: #198cf0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .danh-sach-bai{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .chi-tiet-bai{
+            width: 20%;
+        }
+        img{
+            width: 100%;
+            border-radius: 10px;
+            height: 20vh;
+            object-fit: cover;
+        }
+        .ngay-dang{
+            text-align: right;
+        }
+        .tb-list{
+            width:50%;
+            display:flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .tb-chi-tiet{
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+        .chi-tiet-app img{
+            width: 80px;
+            height:80px;
+        }
+
