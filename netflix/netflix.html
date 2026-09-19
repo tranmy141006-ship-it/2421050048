@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <STYLE>
+        body{
+            background-color: #2F2C38;
+            color: white;
+        }
+        .danh-sach-muc{
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lien-ket-muc{
+            text-decoration: none;
+            color: #DBDBDD; 
+            font-weight: bold;
+
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .muc{
+            padding: 15px;
+            border-radius: 25px;
+        }
+        .muc:hover{
+            background-color: gray;
+        }
+        .logo{
+            width:80px;
+        }
+        .avata{
+            width:80%;
+            border-radius: 50%;
+        }
+        .dang-chon{
+            background-color: #4E4B52;
+        }
+        .banner{
+            
+            width: 95%;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+        .banner-anh{
+            width: 100%;
+            border-radius: 20px;
+        }
+        .danh-sach-the-loai{
+            width: 95%;
+            height:20vh;
+            margin: 20px auto;
+        }
+        .phim{
+            display: flex;
+            justify-content: space-between;
+        }
+        .phim-poster{
+            width: 18%;
+            height: 19vh;
+            border-radius: 20px;
+        }
+        .danh-sach-nhan-vat{
+            display: flex;
+            justify-content: space-between;
+        }
+        .nhan-vat{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .danh-sach-ket{
+            display: flex;
+        }
+    </STYLE>
+</head>
+<body>
+    <header>
+        <nav class="danh muc">
+            <ul class="danh-sach-muc">
+                <img src="../anh/logo.svg" alt="" class="logo"> 
+                <li class="muc"><a class="lien-ket-muc dang-chon" href="#">Trang chủ</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Nhân vật</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Series</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Phim</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Mới & Phổ biến</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Netflix của tôi</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Duyệt tìm theo ngôn ngữ</a></li>
+        </ul>
+    </nav>
+    <div class="chuc-nang">
+        <div class="tim-kiem">
+            <img class="avata" src="../anh/tre em.jpg" alt=" ">
+        </div>
+    </div>
+    </header>
+    <main>
+        <div class="banner">
+            <img class="banner-anh" src="../anh/anh.phim.jpg" alt="">
+        </div>
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                    <h3>Có thể bạn chưa xem</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img src="../anh/chuaxem.jpg" class="phim-poster"></img>
+                        <img src="../anh/chuaxem1.jpg" class="phim-poster"></img>
+                        <img src="../anh/chuaxem2.jpg" class="phim-poster"></img>
+                        <img src="../anh/chuaxem3.jpg" class="phim-poster"></img>
+                        <img src="../anh/chuaxem4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Giải trí</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img src="../anh/giaitri.jpg" class="phim-poster"></img>
+                        <img src="../anh/giaitri1.jpg" class="phim-poster"></img>
+                        <img src="../anh/giaitri2.jpg" class="phim-poster"></img>
+                        <img src="../anh/giaitri3.jpg" class="phim-poster"></img>
+                        <img src="../anh/giaitri4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Phim hoạt hình</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img src="../anh/hoathing.jpg" class="phim-poster"></img>
+                        <img src="../anh/hoathinh1.jpg" class="phim-poster"></img>
+                        <img src="../anh/hoathinh2.jpg" class="phim-poster"></img>
+                        <img src="../anh/hoathinh3.jpg" class="phim-poster"></img>
+                        <img src="../anh/hoathinh4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                    <h3>Phim hài hước</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                       <img src="../anh/hai.jpg" class="phim-poster"></img>
+                        <img src="../anh/hai1.jpg" class="phim-poster"></img>
+                        <img src="../anh/hai2.jpg" class="phim-poster"></img>
+                        <img src="../anh/hai3.jpg" class="phim-poster"></img>
+                        <img src="../anh/hai4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                    <h3>Nhân vật</h3>
+               </div>
+               <div class="danh-sach-nhan-vat">
+                        <img src="../anh/nhanvat.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvat1.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvatt2.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvat3.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvat4.jpg" class="nhan-vat"></img>   
+                        <img src="../anh/nhanvat5.jpg" class="nhan-vat"></img>              
+               </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
