@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        //in ra màn hình
+
+        document.writeln("Hello World! <br>" );
+
+        //khai báo biến
+
+        var ten ="quang anh <br>";
+        document.writeln(ten);
+
+        ten = "ly <br>";
+        document.writeln(ten);
+
+        var namNay = 2026;
+        document.writeln(namNay);
+
+        var soThuNhat = 10;
+        var soThuHai = 5;
+        var ketQua = 0;
+
+        // phép cộng
+        document.writeln("<br> Ket qua soThuNhat +  soThuHai là:") ;
+        ketQua =  soThuNhat +  soThuHai;
+        document.writeln(ketQua);
+
+        // phép trừ
+        document.writeln("<br> Ket qua soThuNhat -  soThuHai là:");
+        ketQua =  soThuNhat -  soThuHai;
+        document.writeln(ketQua);
+
+        //phép nhân
+        document.writeln("<br> Ket qua soThuNhat *  soThuHai là:");
+        ketQua =  soThuNhat *  soThuHai;
+        document.writeln(ketQua);
+
+        //phép chia
+        document.writeln("<br> Ket qua soThuNhat /  soThuHai là:");
+        ketQua =  soThuNhat /  soThuHai;
+        document.writeln(ketQua);
+
+        // phép chia lấy dư
+        document.writeln("<br> Ket qua soThuNhat %  soThuHai là:");
+        ketQua =  soThuNhat %  soThuHai;
+        document.writeln(ketQua);
+
+        //++
+        document.writeln("<br>");
+        document.writeln(++soThuNhat);
+        //--
+        document.writeln("<br>");
+        document.writeln(--soThuHai);
+
+        //+=
+        soThuNhat += soThuHai;
+        document.writeln(soThuNhat);
+
+        //-=
+        soThuNhat -= soThuHai;
+        document.writeln(soThuHai);
+
+        var ho = "do";
+        document.writeln("<br>" + ho + "  "+ ten);
+        document.writeln("<br>");
+        document.writeln(ho.length);
+
+        //kiểm tra dữ liệu
+        document.writeln(typeof(ho));
+
+        //
+        var hoVaTen = "Luong Quang Anh";
+        document.writeln(hoVaTen.indexOf("Quang"));
+        document.writeln("<br>");
+        document.writeln(hoVaTen.includea("Q"));
+       
+        document.writeln("<br>");
+        document.writeln(hoVaTen.startswith("Luong"));
+        //thay thế kí tự
+        document.write(hoVaTen.replace("Luong","Do"));
+
+        document.writeln("<br>");
+        document.write(hoVaTen.toLocaleUpperCase());
+
+        document.writeln("<br>");
+        document.write(hoVaTen.toLocaleLowerCase());
+    </script>
+    <!--External JavaScript-->
+     <script src="script.js"></script>
+</body>
+</html>

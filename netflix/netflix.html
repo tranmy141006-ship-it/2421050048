@@ -26,11 +26,11 @@
             align-items: center;
         }
         .muc{
-            padding: 15px;
+            padding: 10px 20px;
             border-radius: 25px;
         }
-        .muc:hover{
-            background-color: gray;
+        .muc a:hover {
+            color:#b3b3b3;
         }
         .logo{
             width:80px;
@@ -75,9 +75,26 @@
             height: 200px;
             border-radius: 50%;
         }
-        .danh-sach-ket{
-            display: flex;
+        
+        .footer-cuoi-trang {
+            width:45%;
+            margin: 60px auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 16px;
+            column-gap: 20px;
         }
+
+        .footer-cuoi-trang a {
+            color: #808080;
+            font-size: 11px;
+            text-decoration: none;
+        }
+
+        .footer-cuoi-trang a:hover {
+            color:#b3b3b3;
+        }
+
     </STYLE>
 </head>
 <body>
@@ -104,7 +121,7 @@
         <div class="banner">
             <img class="banner-anh" src="../anh/anh.phim.jpg" alt="">
         </div>
-        <div class="danh-sach-the-loai">
+        <class="danh-sach-the-loai">
             <div class="the-loai">
                <div class="ten-the-loai">
                     <h3>Có thể bạn chưa xem</h3>
@@ -161,7 +178,9 @@
                     </div>
                </div>
             </div>
-             <div class="the-loai">
+     </main> 
+     <footer>
+        <div class="the-loai">
                <div class="ten-the-loai">
                     <h3>Nhân vật</h3>
                </div>
@@ -171,10 +190,23 @@
                         <img src="../anh/nhanvatt2.jpg" class="nhan-vat"></img>
                         <img src="../anh/nhanvat3.jpg" class="nhan-vat"></img>
                         <img src="../anh/nhanvat4.jpg" class="nhan-vat"></img>   
-                        <img src="../anh/nhanvat5.jpg" class="nhan-vat"></img>              
+                        <img src="../anh/nhanvat5.jpg" class="nhan-vat"></img>     
+                        <img src="../anh/nhanvat6.jpg" class="nhan-vat"></img>                 
                </div>
             </div>
-        </div>
-    </main>
+         <div class="footer-cuoi-trang">
+            <a href="#">Mô tả âm thanh</a>
+            <a href="#">Thẻ quà tặng</a>
+            <a href="#">Trung tâm đa phương tiện</a>           
+            <a href="#">Quan hệ với nhà đầu tư</a>
+            <a href="#">Việc làm</a>
+            <a href="#">Điều khoản sử dụng</a>            
+            <a href="#">Quyền riêng tư</a>
+            <a href="#">Thông báo pháp lý</a>
+            <a href="#">Tùy chọn cookie</a>
+            <a href="#">Thông tin doanh nghiệp</a>
+            <a href="#">Liên hệ với chúng tôi   </a>
+         </div>
+     </footer>   
 </body>
 </html>
