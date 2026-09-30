@@ -78,10 +78,10 @@
         var hoVaTen = "Luong Quang Anh";
         document.writeln(hoVaTen.indexOf("Quang"));
         document.writeln("<br>");
-        document.writeln(hoVaTen.includea("Q"));
+        document.writeln(hoVaTen.includes("Q"));
        
         document.writeln("<br>");
-        document.writeln(hoVaTen.startswith("Luong"));
+        document.writeln(hoVaTen.startsWith("Luong"));
         //thay thế kí tự
         document.write(hoVaTen.replace("Luong","Do"));
 
@@ -90,6 +90,122 @@
 
         document.writeln("<br>");
         document.write(hoVaTen.toLocaleLowerCase());
+
+        //DATA
+        var homNay = new Date();
+        document.writeln("<br>");
+        document.write(homNay);
+
+        var ngay = new Date("8/6/2025");
+        document.writeln("<br>");
+        document.write(ngay)
+
+        var namNay = homNay.getFullYear();
+        document.writeln("<br>");
+        document.write(namNay);
+
+        var thangNay = ngay.getMonth()+1;
+        document.writeln("<br>");
+        document.write(thangNay);
+
+        var ngayHomNay = homNay.getDate(); 
+        var thu = homNay.getDay()+1 ;
+        document.writeln("<br>");
+        document.write(ngayHomNay);
+
+
+        document.write("<br>Hôm nay là thứ "+ thu +" ngày " + ngayHomNay +" tháng " + thangNay + " năm " + namNay);
+
+        //mang
+        var mangSo = [1,2,3,4,5];
+        document.writeln("<br>");
+        document.write(mangSo[2]);
+        document.writeln("<br>");
+        document.writeln(mangSo.length);
+
+        var mangTen = ["Quang Anh","Ly","Thang"];
+        document.write(mangTen[2]);
+
+        document.writeln("<br>");
+        var mang =[1,2,3,4,5,"Quang Anh","Ly","Thang"]
+        document.write(mang[5]);
+
+        var d = mang.concat(mangSo,mangTen);
+        document.writeln("<br>");
+        document.write(d);
+
+        var d = mang.concat(mangSo,mangTen);
+        document.writeln("<br>");
+        document.write(d.join("-"));
+
+        //lay phan tu cuoi
+        var d = mang.concat(mangSo,mangTen);
+        document.writeln("<br>");
+        document.write(d.pop());
+        
+        //thêm
+        document.writeln("<br>");
+        d.push("Duy")
+        document.write(d);
+
+        //đảo số
+        document.writeln("<br>");
+        document.write(mangSo.reverse());
+
+        //object
+        document.writeln("<br>");
+        var thongTinSinhVien = {
+            ten: "Luong Quang Anh",
+            namSinh: 2006,
+            queQuan: {
+                thanhPho: "Bac Ninh",
+                phuong: "Chu"
+            }
+        };
+        document.write(thongTinSinhVien.ten);
+        document.writeln("<br>");
+        document.write(thongTinSinhVien.queQuan.thanhPho);
+        document.writeln("<br>");
+        tuoi = namNay - thongTinSinhVien.namSinh;
+        document.write(tuoi);
+       // console.log(thongtinsinhvien);
+
+       //boolean: true nam / fales nữ
+      
+
+       // console.log(danhSach);
+
+        //==
+        //=== so sánh cả giá trị và dữ liệu
+        var so1 = 5;
+        var so2 = "10";
+        document.writeln("<br>");
+        document.writeln(so1 == so2);
+
+
+        document.writeln("<br>");
+        if(thu > 6 ){
+            document.writeln("Cuối tuần");
+        }
+        else if(thu == 6){
+            document.writeln("Sắp được ngủ");
+        }
+        else{
+            document.writeln("Đi học");
+        }
+
+        document.writeln("<br>");
+        var so = 5;
+        if(so%2==0 ){
+            document.writeln(so + " là số chẵn");
+        }
+        else{
+            document.writeln(so + " là số lẻ");
+        }
+
+
+
+
     </script>
     <!--External JavaScript-->
      <script src="script.js"></script>
