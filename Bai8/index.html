@@ -24,16 +24,58 @@
         sayHello2("Ly");
         sayHello2("Thang");
 
-        
+        15
         function tinhTong(a,b){
             if(isNaN(a) == false && isNaN(b) == false){
-                document.write(a+b);
+                document.write(a + b);
             }
         }
         var soThuNhat = prompt("Nhập số thứ 1" ,"");
         var soThuHai = prompt("Nhập số thứ 2" ,"");
-        tinhTong(soThuNhat+soThuHai);
+        tinhTong(soThuNhat,soThuHai);
 
+
+
+        //btvn
+        //Viết hàm tính điểm chữ dựa trên 3 đầu điểm(A,B,C)
+
+        function tinhDiemChu(diemA, diemB, diemC) {
+        var diemTB = (diemA * 0.6) + (diemB * 0.3) + (diemC * 0.1);
+        var diemChu = "";
+        if (diemTB >= 9.0)
+         {
+            diemChu = "A+";
+        } 
+        else if (diemTB >= 8.5) {
+            diemChu = "A";
+        } 
+        else if (diemTB >= 8.0) {
+            diemChu = "B+";
+        } 
+        else if (diemTB >= 7.0) {
+            diemChu = "B";
+        } 
+        else if (diemTB >= 6.5) {
+            diemChu = "C+";
+        } 
+        else if (diemTB >= 5.5) {
+            diemChu = "C";
+        }
+        else if (diemTB >= 5.0) {
+            diemChu = "D+";
+        }
+         else if (diemTB >= 4.0) {
+            diemChu = "D";
+        } 
+        else {
+            diemChu = "F";
+        }
+         return diemChu;
+         }
+        // Ví dụ: điểm A = 8, B = 7, C = 9
+        var ketQua = tinhDiemChu(8, 7, 9);
+         console.log("Điểm chữ của bạn là : " + ketQua);
+        
     </script>
 </body>
 </html>
