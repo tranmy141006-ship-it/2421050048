@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .video{
+            width: 560px;
+            height: 315px;
+            margin: auto;
+            
+        }
+
+        .danh-sach{
+            width: 80%;
+           display: flex;
+            margin: 50px auto;
+            justify-content: space-between;
+        }
+
+        .anh{
+            width: 24%;
+            height: 100px;
+            
+            img{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cwlToxaWuL8?si=zX-oNkQodIkjwAiY"
+         title="YouTube video player" 
+         frameborder="0" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+         referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+          <h3 class="ten">MRT</h3>
+    </div>
+    
+    <div class="danh-sach">
+        <div class="anh" onclick="chonVid(1)">
+            <img src="../anh/chochut.jpg" alt="">
+            <p>CONGB - chờ chút... | TINH HÀ SAY HI [PERFORMANCE]</p>
+        </div>
+        <div class="anh" onclick="chonVid(2)">
+            <img src="../anh/thegioi.jpg" alt="">
+            <p>THẾ GIỚI CỦA ANH</p>
+        </div>
+        <div class="anh" onclick="chonVid(3)">
+            <img src="../anh/secret.jpg" alt=" ">
+            <p>SECRET</p>
+        </div>
+        <div class="anh" onclick="chonVid(4)">
+            <img src="../anh/bimatnho.jpg" alt="">
+            <p>BÍ MẬT NHỎ</p>
+        </div>
+    </div>
+
+    <script>
+        var danhSachVid = [
+            {
+                id: 1,
+                ten:"CONGB - chờ chút... | TINH HÀ SAY HI [PERFORMANCE]",
+                duongDanAnh:"../anh/chochut.jpg",
+                duongDanYoutobe:"https://www.youtube.com/embed/eedlpxUw8zg?si=xITWmmGmndaxCocf"
+            },
+            {
+                id: 2,
+                ten:"THẾ GIỚI CỦA ANH",
+                duongDanAnh:"../anh/thegioi.jpg",
+                duongDanYoutobe:"https://www.youtube.com/embed/l_uzEREOKfo?si=CJ20yVQpjTN_JS7-" 
+            },
+            {
+                id: 3,
+                ten: "SECRET",
+                duongDanAnh:"../anh/secret.jpg",
+                duongDanYoutobe:"https://www.youtube.com/embed/XwshmJV-DHg?si=QTEX4vrB91nsynQL" 
+            },
+            {
+                id: 4,
+                ten:"BÍ MẬT NHỎ",
+                duongDanAnh:"../anh/bimatnho.jpg",
+                duongDanYoutobe:"https://www.youtube.com/embed/_eGLqRSDAN4?si=ammS6adab-JRIcfJ"  
+            },
+        ];
+
+        function chonVid(id){
+            for(var i = 0; i < danhSachVid.length ; i++){
+                if(danhSachVid[i].id == id){
+                    document.getElementsByClassName("ten")[0].innerHTML = danhSachVid[i].ten;
+                    document.getElementsByTagName("iframe")[0].src=danhSachVid[i].duongDanYoutobe;
+                }
+                
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>
