@@ -38,10 +38,7 @@
         .avata{
             width:80%;
             border-radius: 50%;
-        }
-        .dang-chon{
-            background-color: #4E4B52;
-        }
+        }      
         .banner{
             
             width: 95%;
@@ -101,6 +98,7 @@
             color:#b3b3b3;
         }
 
+
     </STYLE>
 </head>
 <body>
@@ -128,7 +126,10 @@
             <img class="banner-anh" src="../anh/anh.phim.jpg" alt="">
         </div>
         <div style="display: none;" class="banner">
-             <iframe class="banner-anh"  src="https://www.youtube.com/embed/nm1hA18q_Ws?si=tpI6N_Qiqvz6anMZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <iframe src="https://www.youtube.com/embed/OvgVWM7ulu8?si=ZG7SFgNFjGOrInPz" 
+             title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <class="danh-sach-the-loai">
             <div class="the-loai">
@@ -137,11 +138,11 @@
                </div>
                <div class="danh-sach-phim">
                     <div class="phim">
-                        <img src="../anh/chuaxem.jpg" class="phim-poster"></img>
-                        <img src="../anh/chuaxem1.jpg" class="phim-poster"></img>
-                        <img src="../anh/chuaxem2.jpg" class="phim-poster"></img>
-                        <img src="../anh/chuaxem3.jpg" class="phim-poster"></img>
-                        <img src="../anh/chuaxem4.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(1)" src="../anh/chuaxem.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(2)" src="../anh/chuaxem1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(3)" src="../anh/chuaxem2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(4)" src="../anh/chuaxem3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(5)" src="../anh/chuaxem4.jpg" class="phim-poster"></img>
                     </div>
                </div>
             </div>
@@ -151,11 +152,11 @@
                </div>
                <div class="danh-sach-phim">
                     <div class="phim">
-                        <img src="../anh/giaitri.jpg" class="phim-poster"></img>
-                        <img src="../anh/giaitri1.jpg" class="phim-poster"></img>
-                        <img src="../anh/giaitri2.jpg" class="phim-poster"></img>
-                        <img src="../anh/giaitri3.jpg" class="phim-poster"></img>
-                        <img src="../anh/giaitri4.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(6)" src="../anh/giaitri.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(7)" src="../anh/giaitri1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(8)" src="../anh/giaitri2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(9)" src="../anh/giaitri3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(10)" src="../anh/giaitri4.jpg" class="phim-poster"></img>
                     </div>
                </div>
             </div>
@@ -165,11 +166,11 @@
                </div>
                <div class="danh-sach-phim">
                     <div class="phim">
-                        <img src="../anh/hoathing.jpg" class="phim-poster"></img>
-                        <img src="../anh/hoathinh1.jpg" class="phim-poster"></img>
-                        <img src="../anh/hoathinh2.jpg" class="phim-poster"></img>
-                        <img src="../anh/hoathinh3.jpg" class="phim-poster"></img>
-                        <img src="../anh/hoathinh4.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(11)" src="../anh/hoathing.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(12)" src="../anh/hoathinh1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(13)" src="../anh/hoathinh2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(14)" src="../anh/hoathinh3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(15)" src="../anh/hoathinh4.jpg" class="phim-poster"></img>
                     </div>
                </div>
             </div>
@@ -179,14 +180,70 @@
                </div>
                <div class="danh-sach-phim">
                     <div class="phim">
-                       <img src="../anh/hai.jpg" class="phim-poster"></img>
-                        <img src="../anh/hai1.jpg" class="phim-poster"></img>
-                        <img src="../anh/hai2.jpg" class="phim-poster"></img>
-                        <img src="../anh/hai3.jpg" class="phim-poster"></img>
-                        <img src="../anh/hai4.jpg" class="phim-poster"></img>
+                       <img onclick="chonVid(16)" src="../anh/hai.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(17)" src="../anh/hai1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(18)" src="../anh/hai2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(19)" src="../anh/hai3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(20)" src="../anh/hai4.jpg" class="phim-poster"></img>
                     </div>
                </div>
             </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Nhạc thiếu Nhi</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(21)" src="../anh/thieunhi.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(22)" src="../anh/thieunhi1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(23)" src="../anh/thieunhi2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(24)" src="../anh/thieunhi3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(25)" src="../anh/thieunhi4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3> Âm nhạc</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(26)" src="../anh/bimatnho.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(27)" src="../anh/chochut.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(28)" src="../anh/thegioi.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(29)" src="../anh/giothi.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(30)" src="../anh/secret.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Review phim</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(31)" src="../anh/phim.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(32)" src="../anh/phim1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(33)" src="../anh/phim2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(34)" src="../anh/phim3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(35)" src="../anh/phim4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Bản tin thời sự</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(36)" src="../anh/thoisu.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(37)" src="../anh/thoisu1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(37)" src="../anh/thoisu2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(39)" src="../anh/thoisu3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(40)" src="../anh/thoisu4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>            
      </main> 
      <footer>
         <div class="the-loai">
