@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <STYLE>
+        body{
+            background-color: #2F2C38;
+            color: white;
+        }
+        .danh-sach-muc{
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lien-ket-muc{
+            text-decoration: none;
+            color: #DBDBDD; 
+            font-weight: bold;
+
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .muc{
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+        .muc a:hover {
+            color:#b3b3b3;
+        }
+        .logo{
+            width:80px;
+        }
+        .avata{
+            width:80%;
+            border-radius: 50%;
+        }      
+        .banner{
+            
+            width: 95%;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+        .banner-anh{
+            width: 100%;
+            border-radius: 20px;
+        }
+        .banner iframe {
+            width: 100%;
+            height: 700px;
+            border-radius: 20px;
+            
+        }
+        .danh-sach-the-loai{
+            width: 95%;
+            height:20vh;
+            margin: 20px auto;
+        }
+        .phim{
+            display: flex;
+            justify-content: space-between;
+        }
+        .phim-poster{
+            width: 18%;
+            height: 19vh;
+            border-radius: 20px;
+        }
+        .danh-sach-nhan-vat{
+            display: flex;
+            justify-content: space-between;
+        }
+        .nhan-vat{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        
+        .footer-cuoi-trang {
+            width:45%;
+            margin: 60px auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 16px;
+            column-gap: 20px;
+        }
+
+        .footer-cuoi-trang a {
+            color: #808080;
+            font-size: 11px;
+            text-decoration: none;
+        }
+
+        .footer-cuoi-trang a:hover {
+            color:#b3b3b3;
+        }
+
+
+    </STYLE>
+</head>
+<body>
+    <header>
+        <nav class="danh muc">
+            <ul class="danh-sach-muc">
+                <img src="../anh/logo.svg" alt="" class="logo"> 
+                <li class="muc"><a class="lien-ket-muc dang-chon" href="#">Trang chủ</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Nhân vật</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Series</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Phim</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Mới & Phổ biến</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Netflix của tôi</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Duyệt tìm theo ngôn ngữ</a></li>
+        </ul>
+    </nav>
+    <div class="chuc-nang">
+        <div class="tim-kiem">
+            <img class="avata" src="../anh/tre em.jpg" alt=" ">
+        </div>
+    </div>
+    </header>
+    <main>
+        <div onclick="xemTrailer()" class="banner">
+            <img class="banner-anh" src="../anh/anh.phim.jpg" alt="">
+        </div>
+        <div style="display: none;" class="banner">
+             <iframe src="https://www.youtube.com/embed/OvgVWM7ulu8?si=ZG7SFgNFjGOrInPz" 
+             title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <class="danh-sach-the-loai">
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                    <h3>Có thể bạn chưa xem</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img onclick="chonVid(1)" src="../anh/chuaxem.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(2)" src="../anh/chuaxem1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(3)" src="../anh/chuaxem2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(4)" src="../anh/chuaxem3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(5)" src="../anh/chuaxem4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Giải trí</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img onclick="chonVid(6)" src="../anh/giaitri.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(7)" src="../anh/giaitri1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(8)" src="../anh/giaitri2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(9)" src="../anh/giaitri3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(10)" src="../anh/giaitri4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Phim hoạt hình</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img onclick="chonVid(11)" src="../anh/hoathing.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(12)" src="../anh/hoathinh1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(13)" src="../anh/hoathinh2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(14)" src="../anh/hoathinh3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(15)" src="../anh/hoathinh4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                    <h3>Phim hài hước</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim">
+                       <img onclick="chonVid(16)" src="../anh/hai.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(17)" src="../anh/hai1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(18)" src="../anh/hai2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(19)" src="../anh/hai3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(20)" src="../anh/hai4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+            <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Nhạc thiếu Nhi</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(21)" src="../anh/thieunhi.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(22)" src="../anh/thieunhi1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(23)" src="../anh/thieunhi2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(24)" src="../anh/thieunhi3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(25)" src="../anh/thieunhi4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3> Âm nhạc</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(26)" src="../anh/bimatnho.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(27)" src="../anh/chochut.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(28)" src="../anh/thegioi.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(29)" src="../anh/giothi.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(30)" src="../anh/secret.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Review phim</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(31)" src="../anh/phim.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(32)" src="../anh/phim1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(33)" src="../anh/phim2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(34)" src="../anh/phim3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(35)" src="../anh/phim4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>
+             <div class="the-loai">
+               <div class="ten-the-loai">
+                <h3>Bản tin thời sự</h3>
+               </div>
+               <div class="danh-sach-phim">
+                    <div class="phim" >
+                        <img onclick="chonVid(36)" src="../anh/thoisu.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(37)" src="../anh/thoisu1.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(37)" src="../anh/thoisu2.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(39)" src="../anh/thoisu3.jpg" class="phim-poster"></img>
+                        <img onclick="chonVid(40)" src="../anh/thoisu4.jpg" class="phim-poster"></img>
+                    </div>
+               </div>
+            </div>            
+     </main> 
+     <footer>
+        <div class="the-loai">
+               <div class="ten-the-loai">
+                    <h3>Nhân vật</h3>
+               </div>
+               <div class="danh-sach-nhan-vat">
+                        <img src="../anh/nhanvat.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvat1.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvatt2.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvat3.jpg" class="nhan-vat"></img>
+                        <img src="../anh/nhanvat4.jpg" class="nhan-vat"></img>   
+                        <img src="../anh/nhanvat5.jpg" class="nhan-vat"></img>     
+                        <img src="../anh/nhanvat6.jpg" class="nhan-vat"></img>                 
+               </div>
+            </div>
+         <div class="footer-cuoi-trang">
+            <a href="#">Mô tả âm thanh</a>
+            <a href="#">Thẻ quà tặng</a>
+            <a href="#">Trung tâm đa phương tiện</a>           
+            <a href="#">Quan hệ với nhà đầu tư</a>
+            <a href="#">Việc làm</a>
+            <a href="#">Điều khoản sử dụng</a>            
+            <a href="#">Quyền riêng tư</a>
+            <a href="#">Thông báo pháp lý</a>
+            <a href="#">Tùy chọn cookie</a>
+            <a href="#">Thông tin doanh nghiệp</a>
+            <a href="#">Liên hệ với chúng tôi   </a>
+         </div>
+     </footer>   
+     <script src="script.js">
+       
+     </script>
+</body>
+</html>

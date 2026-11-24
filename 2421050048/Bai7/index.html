@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        //in ra màn hình
+
+        document.writeln("Hello World! <br>" );
+
+        //khai báo biến
+
+        var ten ="quang anh <br>";
+        document.writeln(ten);
+
+        ten = "ly <br>";
+        document.writeln(ten);
+
+        var namNay = 2026;
+        document.writeln(namNay);
+
+        var soThuNhat = 10;
+        var soThuHai = 5;
+        var ketQua = 0;
+
+        // phép cộng
+        document.writeln("<br> Ket qua soThuNhat +  soThuHai là:") ;
+        ketQua =  soThuNhat +  soThuHai;
+        document.writeln(ketQua);
+
+        // phép trừ
+        document.writeln("<br> Ket qua soThuNhat -  soThuHai là:");
+        ketQua =  soThuNhat -  soThuHai;
+        document.writeln(ketQua);
+
+        //phép nhân
+        document.writeln("<br> Ket qua soThuNhat *  soThuHai là:");
+        ketQua =  soThuNhat *  soThuHai;
+        document.writeln(ketQua);
+
+        //phép chia
+        document.writeln("<br> Ket qua soThuNhat /  soThuHai là:");
+        ketQua =  soThuNhat /  soThuHai;
+        document.writeln(ketQua);
+
+        // phép chia lấy dư
+        document.writeln("<br> Ket qua soThuNhat %  soThuHai là:");
+        ketQua =  soThuNhat %  soThuHai;
+        document.writeln(ketQua);
+
+        //++
+        document.writeln("<br>");
+        document.writeln(++soThuNhat);
+        //--
+        document.writeln("<br>");
+        document.writeln(--soThuHai);
+
+        //+=
+        soThuNhat += soThuHai;
+        document.writeln(soThuNhat);
+
+        //-=
+        soThuNhat -= soThuHai;
+        document.writeln(soThuHai);
+
+        var ho = "do";
+        document.writeln("<br>" + ho + "  "+ ten);
+        document.writeln("<br>");
+        document.writeln(ho.length);
+
+        //kiểm tra dữ liệu
+        document.writeln(typeof(ho));
+
+        //
+        var hoVaTen = "Luong Quang Anh";
+        document.writeln(hoVaTen.indexOf("Quang"));
+        document.writeln("<br>");
+        document.writeln(hoVaTen.includes("Q"));
+       
+        document.writeln("<br>");
+        document.writeln(hoVaTen.startsWith("Luong"));
+        //thay thế kí tự
+        document.write(hoVaTen.replace("Luong","Do"));
+
+        document.writeln("<br>");
+        document.write(hoVaTen.toLocaleUpperCase());
+
+        document.writeln("<br>");
+        document.write(hoVaTen.toLocaleLowerCase());
+
+        //DATA
+        var homNay = new Date();
+        document.writeln("<br>");
+        document.write(homNay);
+
+        var ngay = new Date("8/6/2025");
+        document.writeln("<br>");
+        document.write(ngay)
+
+        var namNay = homNay.getFullYear();
+        document.writeln("<br>");
+        document.write(namNay);
+
+        var thangNay = ngay.getMonth()+1;
+        document.writeln("<br>");
+        document.write(thangNay);
+
+        var ngayHomNay = homNay.getDate(); 
+        var thu = homNay.getDay()+1 ;
+        document.writeln("<br>");
+        document.write(ngayHomNay);
+
+
+        document.write("<br>Hôm nay là thứ "+ thu +" ngày " + ngayHomNay +" tháng " + thangNay + " năm " + namNay);
+
+        //mang
+        var mangSo = [1,2,3,4,5];
+        document.writeln("<br>");
+        document.write(mangSo[2]);
+        document.writeln("<br>");
+        document.writeln(mangSo.length);
+
+        var mangTen = ["Quang Anh","Ly","Thang"];
+        document.write(mangTen[2]);
+
+        document.writeln("<br>");
+        var mang =[1,2,3,4,5,"Quang Anh","Ly","Thang"];
+        document.write(mang[5]);
+
+        var d = mang.concat(mangSo,mangTen);
+        document.writeln("<br>");
+        document.write(d);
+
+        var d = mang.concat(mangSo,mangTen);
+        document.writeln("<br>");
+        document.write(d.join("-"));
+
+        //lay phan tu cuoi
+        var d = mang.concat(mangSo,mangTen);
+        document.writeln("<br>");
+        document.write(d.pop());
+        
+        //thêm
+        document.writeln("<br>");
+        d.push("Duy")
+        document.write(d);
+
+        //đảo số
+        document.writeln("<br>");
+        document.write(mangSo.reverse());
+
+        //object
+        document.writeln("<br>");
+        var thongTinSinhVien = {
+            ten: "Luong Quang Anh",
+            namSinh: 2006,
+            queQuan: {
+                thanhPho: "Bac Ninh",
+                phuong: "Chu"
+            }
+        };
+        document.write(thongTinSinhVien.ten);
+        document.writeln("<br>");
+        document.write(thongTinSinhVien.queQuan.thanhPho);
+        document.writeln("<br>");
+        tuoi = namNay - thongTinSinhVien.namSinh;
+        document.write(tuoi);
+       // console.log(thongtinsinhvien);
+
+       //boolean: true nam / fales nữ
+      
+
+       // console.log(danhSach);
+
+        //==
+        //=== so sánh cả giá trị và dữ liệu
+        var so1 = 5;
+        var so2 = "10";
+        document.writeln("<br>");
+        document.writeln(so1 == so2);
+
+
+        document.writeln("<br>");
+        if(thu > 6 ){
+            document.writeln("Cuối tuần");
+        }
+        else if(thu == 6){
+            document.writeln("Sắp được ngủ");
+        }
+        else{
+            document.writeln("Đi học");
+        }
+
+        document.writeln("<br>");
+        var so = 5;
+        if(so%2==0 ){
+            document.writeln(so + " là số chẵn");
+        }
+        else{
+            document.writeln(so + " là số lẻ");
+        }
+
+        var so = 2000000000000001;
+        var doDai = so.length;
+        var soCuoiCung = so[doDai-1];
+        document.writeln("<br>");
+        document.writeln(soCuoiCung);
+        if(so%2==0 ){
+            document.writeln(so + " là số chẵn");
+        }
+        else{
+            document.writeln(so + " là số lẻ");
+        }
+
+        var d =new Date();
+        var theDay = d.getDay();
+        document.writeln("<br>");
+        switch(theDay){
+            case 5:
+                document.writeln("Finally Friday");
+                break;
+            case 6:
+                document.writeln("super Saturday");
+                break;
+            case 0:
+                document.writeln("Sleepy Sunday");
+                break;
+            default:
+                document.writeln("I'm looking forward to the Weekend");
+        }
+
+        for(var index = 1; index <= 5 ; index++){
+            document.writeln("<br>");
+            document.writeln("Quang Anh xin lỗi lần thứ " + index);
+        }
+        
+        //mảng  =[1,2,3,4,5,"Quang Anh","Ly","Thang"]
+        for(var i = 0; i< mang.length;i++){
+            document.writeln("<br>");
+            document.writeln(mang[i]);
+        }
+          
+        var mang =[1,2,3,4,5,"Quang Anh","Ly","Thang"]
+        for(var i = 0; i< mang.length;i++){
+            if(isNaN(mang[i]) == true)
+            {
+                document.writeln("<br>");
+                document.writeln("xin chào " + mang[i]);
+            }
+        }
+        
+        ///while
+        var i= 0;
+        while(i <= 10){
+            document.write("The number is " + i);
+            document.write("<br />");
+            i=i+1;
+        }
+        //do while
+        var j=0;
+        do{
+            document.write("The number is " + j);
+            document.write("<br />");
+            j=j+1;
+        }while(j <= 10)
+
+
+        //popup boxes
+         alert("hello");
+
+         var r = confirm("Press a button")
+        if(r == true){
+             document.write("You pressed ok!");
+         }
+         else{
+             document.write("You pressed Cancel!")
+         }
+
+         var r = prompt("nhập vào họ tên","nhập tên ở đây")
+         document.write(r);
+
+
+
+         
+
+
+
+    </script>
+    <!--External JavaScript-->
+     <script src="script.js"></script>
+</body>
+</html>
