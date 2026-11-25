@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm Phim</title>
+    <title>CapNhatPhim</title>
     <style>
-    .khoi{
+     .khoi{
             border: 1px solid black;
             border-radius: 10px;
             width: 250px;
@@ -31,59 +31,59 @@
     </style>
 </head>
 <body>
-        <h1>Thêm phim</h1>
-        <form class="khoi" action="index.php?page_layout=themphim" method="POST">
+    <?php 
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM `phim` WHERE id = '$id'";
+        $result = mysqli_query($conn,$sql);
+        $phim = mysqli_fetch_assoc($result);
+    ?>
+        <h1>Cập nhật phim</h1>
+        <form class="khoi" action="index.php?page_layout=capnhatphim&id=<?php echo $id ?>" method="POST">
             <div class="i-text">
-                <input type="text" name="tenPhim"  id="" placeholder="Tên Phim">
+                <input type="text" name="tenPhim" value="<?php echo $phim['ten_phim'] ?>" id="" placeholder="Tên Phim">
             </div>
             <div class="i-text">
-                <input type="text" name="quocGia"  id="" placeholder="Quốc Gia">
+                <input type="text" name="quocGia" value="<?php echo $phim['quoc_gia'] ?>" id="" placeholder="Quốc Gia">
             </div>
             <div class="i-text">
-                <input type="number" name="daoDienId"  id="" placeholder="Đạo Diễn ID">
+                <input type="date" name="nam" value="<?php echo $phim['nam'] ?>" id="" placeholder="Năm">
             </div>
             <div class="i-text">
-                <input type="date" name="nam" id="" placeholder="Năm">
+                <input type="number" name="doTuoi" value="<?php echo $phim['do_tuoi'] ?>" id="" placeholder="Độ Tuổi">
             </div>
             <div class="i-text">
-                <input type="number" name="doTuoi" id="" placeholder="Độ Tuổi">
-            </div>
-            <div class="i-text">
-                <input type="text" name="moTa" id="" placeholder="Mô Tả">
+                <input type="text" name="moTa" value="<?php echo $phim['mo_ta'] ?>" id="" placeholder="Mô Tả">
             </div>
         
-            <button>Thêm</button>
+            <button>Cập nhật</button>
         </form>
         <?php
             if(isset($_POST['tenPhim']) && 
             isset($_POST['quocGia']) && 
-            isset($_POST['daoDienId']) &&
             isset($_POST['nam']) && 
             isset($_POST['doTuoi']) &&
             isset($_POST['moTa']))
             {
                 $tenPhim = $_POST['tenPhim'];
                 $quocGia = $_POST['quocGia'];
-                $dao_dien_id = $_POST['daoDienId'];
                 $nam = $_POST['nam'];
                 $doTuoi = $_POST['doTuoi'];
                 $moTa = $_POST['moTa'];
                 if(!empty($tenPhim) && 
                     !empty($quocGia) && 
-                    !empty($_POST['daoDienId']) &&
                     !empty($nam) && 
                     !empty($doTuoi) &&
                     !empty($moTa)
                     ){
-                    $sql = "INSERT INTO `phim`(`ten_phim`, `quoc_gia`, `dao_dien_id`, `nam`, `do_tuoi`, `mo_ta`)
-                    VALUES ('$tenPhim','$quocGia','$dao_dien_id','$nam','$doTuoi','$moTa')";
+                    $sql_update = "UPDATE `phim` SET `ten_phim`='$tenPhim',`quoc_gia`='$quocGia',`nam`='$nam',
+                    `do_tuoi`='$doTuoi',`mo_ta`='$moTa' WHERE `id`='$id'";
                     //echo $sql;
-                    $result = mysqli_query($conn,$sql);
-                    if($result){
+                    $result_update = mysqli_query($conn,$sql_update);
+                    if($result_update){
                         header("Location: index.php?page_layout=phim");
                     }
                     else{
-                        echo "Thêm phim thất bại!";
+                        echo "Update phim thất bại!";
                     }
                 }
                 else{
@@ -93,5 +93,6 @@
             }
             
         ?>
+
 </body>
 </html>

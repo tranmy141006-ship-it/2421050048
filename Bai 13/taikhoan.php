@@ -17,10 +17,10 @@
             border-radius: 10px;
         }
         .capnhat{
-            background-color: #98C379;
+            background-color: #75B9F2;
         }
         .xoa{
-            background-color: red;
+            background-color: #C42B1C;
         }
     </style>
 </head>

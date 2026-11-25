@@ -6,7 +6,7 @@
     <title>DanhMuc</title>
     <style>
         table{
-            width: 100%;
+            width: 25%;
         }
         tr,th,td{
             border: 1px solid black;
@@ -18,10 +18,10 @@
             border-radius: 10px;
         }
         .capnhat{
-            background-color: #98C379;
+            background-color: #75B9F2;
         }
         .xoa{
-            background-color: red;
+            background-color: #C42B1C;
         }
     </style>
 </head>

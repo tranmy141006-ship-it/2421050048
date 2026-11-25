@@ -17,10 +17,10 @@
             border-radius: 10px;
         }
         .capnhat{
-            background-color: #98C379;
+            background-color: #75B9F2;
         }
         .xoa{
-            background-color: red;
+            background-color: #C42B1C;
         }
     </style>
 </head>
@@ -31,7 +31,13 @@
 
     </div>
     <?php
-        $sql = "SELECT * from phim";
+        $sql = "SELECT * from phim p
+        join dao_dien dd
+        on p.dao_dien_id = dd.id
+        join phim_the_loai ptl
+        on p.id = ptl.phim_id
+        join the_loai tl
+        on tl.id = ptl.the_loai_id ";
         $result = mysqli_query($conn,$sql);
 
     ?>
@@ -41,8 +47,10 @@
             <th>ID</th>
             <th>Tên Phim</th>
             <th>Quốc Gia</th>
+            <th>Đạo diễn</th>
             <th>Năm</th>
             <th>Độ Tuổi</th>
+            <th>Thể loại</th>
             <th>Mô Tả</th>
             <th>Chức năng</th>
         </tr>
@@ -55,8 +63,10 @@
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['ten_phim'] ?></td>
             <td><?php echo $row['quoc_gia'] ?></td>
+            <td><?php echo $row['ho_ten'] ?></td>
             <td><?php echo $row['nam'] ?></td>
             <td><?php echo $row['do_tuoi'] ?></td>
+            <td><?php echo $row['ten_the_loai'] ?></td>
             <td><?php echo $row['mo_ta'] ?></td>
             <td>
                 <a class="capnhat" href="index.php?page_layout=capnhatphim&id=<?php echo $row['id'] ?>">Cập nhật</a>

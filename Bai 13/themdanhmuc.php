@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapNhatDanhMuc</title>
+    <title>Thêm danh mục</title>
     <style>
     .khoi{
             border: 1px solid black;
