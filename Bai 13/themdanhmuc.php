@@ -12,22 +12,21 @@
             margin: 20vh auto;
             background-color: antiquewhite;
         }
-    .i-text input{
-        padding:5px 0;
-        margin:10px 0;
-        border-radius: 10px;
-    }
-    button{
+        .i-text input{
+            padding: 5px 0;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button{
             padding: 5px 0;
             width: 100%;
         }
-    form{
-        padding: 10px;
-    }
-    h1{
-        text-align: center;
-        margin: 5px 2px;
-    }
+        form{
+            padding: 10px;
+        }
+        h1{
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>

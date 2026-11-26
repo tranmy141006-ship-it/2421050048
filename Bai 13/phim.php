@@ -30,14 +30,14 @@
         <a style="color: black" class="btn-add" href="index.php?page_layout=themphim">Thêm Phim</a>
     </div>
     <?php
-        $sql = "SELECT * from phim p
-        join dao_dien dd
-        on p.dao_dien_id = dd.id
-        join phim_the_loai ptl
-        on p.id = ptl.phim_id
-        join the_loai tl
-        on tl.id = ptl.the_loai_id ";
-        $result = mysqli_query($conn,$sql);
+        // $sql = "SELECT * from phim p
+        // join dao_dien dd
+        // on p.dao_dien_id = dd.id
+        // join phim_the_loai ptl
+        // on p.id = ptl.phim_id
+        // join the_loai tl
+        // on tl.id = ptl.the_loai_id ";
+        // $result = mysqli_query($conn,$sql);
 
 
         $sql = "SELECT p.*, dd.ho_ten, tl.ten_the_loai FROM phim p

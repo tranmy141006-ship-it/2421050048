@@ -103,7 +103,11 @@
             isset($_POST['daoDienId']) &&
             isset($_POST['nam']) &&
             isset($_POST['doTuoi']) &&
-            isset($_POST['moTa']))
+            isset($_POST['moTa'])
+            //  &&
+            // isset($_POST['trailer']) &&
+            // isset($_POST['poster'])
+            )
             {
                 $tenPhim = $_POST['tenPhim'];
                 $quocGia = $_POST['quocGia'];
@@ -111,6 +115,8 @@
                 $dao_dien_id = $_POST['daoDienId'];
                 $nam = $_POST['nam'];
                 $doTuoi = $_POST['doTuoi'];
+                // $traile = $_POST['trailer'];
+                // $poster = $_POST['poster'];
                 $moTa = $_POST['moTa'];
 
                 if(!empty($tenPhim) &&
@@ -119,12 +125,12 @@
                 !empty($dao_dien_id) &&
                 !empty($nam) &&
                 !empty($doTuoi) &&
+                // !empty($trailer) &&
+                // !empty($poster) &&
                 !empty($moTa))
                 {
-                    $sqlThem = "INSERT INTO phim
-                    (ten_phim, quoc_gia, dao_dien_id, nam, do_tuoi, mo_ta)
-                    VALUES
-                    ('$tenPhim','$quocGia','$dao_dien_id','$nam','$doTuoi','$moTa')";
+                    $sqlThem = "INSERT INTO phim(ten_phim, quoc_gia, dao_dien_id, nam, do_tuoi, mo_ta)
+                    VALUES('$tenPhim','$quocGia','$dao_dien_id','$nam','$doTuoi','$moTa')";
 
                     $result_update = mysqli_query($conn, $sqlThem);
 

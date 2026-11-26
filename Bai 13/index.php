@@ -8,7 +8,7 @@
         ul{
             list-style: none;
             display: flex;
-            gap: 10px;
+            gap: 50px;
             background-color: #0765FF;
             padding: 20px;
         }
@@ -34,7 +34,8 @@
                 <li><a href="index.php?page_layout=trangchu">Trang chủ</a></li>
                 <li><a href="index.php?page_layout=taikhoan">Tài khoản</a></li>
                 <li><a href="index.php?page_layout=danhmuc">Danh mục</a></li>
-                <li><a href="index.php?page_layout=phim">phim</a></li>
+                <li><a href="index.php?page_layout=phim">Phim</a></li>
+                <li><a href="index.php?page_layout=daodien">Đạo diễn</a></li>
             </ul>
         </nav>
     </header>
@@ -54,6 +55,9 @@
                     break;
                 case'phim':
                     include 'phim.php';
+                    break;
+                case'daodien':
+                    include 'daodien.php';
                     break; 
                 case'themtaikhoan':
                     include 'themtaikhoan.php';
@@ -81,7 +85,16 @@
                     break;
                 case 'xoaphim':
                     include 'xoaphim.php';
-                    break;              
+                    break;
+                case'themdaodien':
+                    include 'themdaodien.php';
+                    break;
+                case'capnhatdaodien':
+                    include 'capnhatdaodien.php';
+                    break;
+                case 'xoadaodien':
+                    include 'xoadaodien.php';
+                    break;           
             }
         }
     ?>
