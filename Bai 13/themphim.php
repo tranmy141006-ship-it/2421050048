@@ -17,6 +17,11 @@
             margin: 10px 0;
             width: 100%;
         }
+        .i-text select {
+            padding: 5px 0;
+            margin: 10px 0;
+            width: 100%;
+        }
         button{
             padding: 5px 0;
             width: 100%;
@@ -32,15 +37,45 @@
 </head>
 <body>
         <h1>Thêm phim</h1>
-        <form class="khoi" action="index.php?page_layout=themphim" method="POST">
+        <form class="khoi" action="index.php?page_layout=themphim" method="POST" enctype="multipart/form-data">
             <div class="i-text">
                 <input type="text" name="tenPhim"  id="" placeholder="Tên Phim">
             </div>
             <div class="i-text">
                 <input type="text" name="quocGia"  id="" placeholder="Quốc Gia">
             </div>
+            <?php
+                $sqlTheLoai = " select * from the_loai";
+                $result = mysqli_query($conn,$sqlTheLoai);
+            ?>
             <div class="i-text">
-                <input type="number" name="daoDienId"  id="" placeholder="Đạo Diễn ID">
+                <select name="theLoai" id="">
+                    <?php 
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                    ?>
+                        <option value="<?php echo $row['id'] ?>"><?php echo $row['ten_the_loai']?></option>
+                    <?php
+                         }
+                    ?>   
+                </select>
+            </div>
+            
+            <?php
+                $sqlDaoDien = " select * from dao_dien";
+                $result = mysqli_query($conn,$sqlDaoDien);
+            ?>
+            <div class="i-text">
+                <select name="daoDienId" id="">
+                    <?php 
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                    ?>
+                        <option value="<?php echo $row['id'] ?>"><?php echo $row['ho_ten']?></option>
+                    <?php
+                         }
+                    ?>   
+                </select>
             </div>
             <div class="i-text">
                 <input type="date" name="nam" id="" placeholder="Năm">
@@ -48,56 +83,82 @@
             <div class="i-text">
                 <input type="number" name="doTuoi" id="" placeholder="Độ Tuổi">
             </div>
-            <div class="i-text">
-                <input type="text" name="moTa" id="" placeholder="Mô Tả">
+            <!-- <div class="i-text">
+                <input type="text" name="trailer" id="" placeholder="Trailer">
             </div>
             <div class="i-text">
-                <input type="text" name="moTa" id="" placeholder="Mô Tả">
-            </div>
+                <input type="text" name="poster" id="" placeholder="Poster">
+            </div> -->
             <div class="i-text">
                 <input type="text" name="moTa" id="" placeholder="Mô Tả">
             </div>
         
             <button>Thêm</button>
         </form>
+        
         <?php
-            if(isset($_POST['tenPhim']) && 
-            isset($_POST['quocGia']) && 
+            if(isset($_POST['tenPhim']) &&
+            isset($_POST['quocGia']) &&
+            isset($_POST['theLoai']) &&
             isset($_POST['daoDienId']) &&
-            isset($_POST['nam']) && 
+            isset($_POST['nam']) &&
             isset($_POST['doTuoi']) &&
             isset($_POST['moTa']))
             {
                 $tenPhim = $_POST['tenPhim'];
                 $quocGia = $_POST['quocGia'];
+                $theLoai = $_POST['theLoai'];
                 $dao_dien_id = $_POST['daoDienId'];
                 $nam = $_POST['nam'];
                 $doTuoi = $_POST['doTuoi'];
                 $moTa = $_POST['moTa'];
-                if(!empty($tenPhim) && 
-                    !empty($quocGia) && 
-                    !empty($_POST['daoDienId']) &&
-                    !empty($nam) && 
-                    !empty($doTuoi) &&
-                    !empty($moTa)
-                    ){
-                    $sql = "INSERT INTO `phim`(`ten_phim`, `quoc_gia`, `dao_dien_id`, `nam`, `do_tuoi`, `mo_ta`)
-                    VALUES ('$tenPhim','$quocGia','$dao_dien_id','$nam','$doTuoi','$moTa')";
-                    //echo $sql;
-                    $result = mysqli_query($conn,$sql);
-                    if($result){
-                        header("Location: index.php?page_layout=phim");
+
+                if(!empty($tenPhim) &&
+                !empty($quocGia) &&
+                !empty($theLoai) &&
+                !empty($dao_dien_id) &&
+                !empty($nam) &&
+                !empty($doTuoi) &&
+                !empty($moTa))
+                {
+                    $sqlThem = "INSERT INTO phim
+                    (ten_phim, quoc_gia, dao_dien_id, nam, do_tuoi, mo_ta)
+                    VALUES
+                    ('$tenPhim','$quocGia','$dao_dien_id','$nam','$doTuoi','$moTa')";
+
+                    $result_update = mysqli_query($conn, $sqlThem);
+
+                    if($result_update)
+                    {
+                        $phimIdMoi = mysqli_insert_id($conn);
+
+                        $sqlThemTheLoai = "INSERT INTO phim_the_loai
+                        (phim_id, the_loai_id)
+                        VALUES ('$phimIdMoi', '$theLoai')";
+
+                        $resultTheLoai = mysqli_query($conn, $sqlThemTheLoai);
+
+                        if($resultTheLoai)
+                        {
+                            header("Location: index.php?page_layout=phim");
+                            exit();
+                        }
+                        else
+                        {
+                            echo "Lỗi thêm thể loại: " . mysqli_error($conn);
+                        }
                     }
-                    else{
-                        echo "Thêm phim thất bại!";
+                    else
+                    {
+                        echo "Lỗi thêm phim: " . mysqli_error($conn);
                     }
                 }
-                else{
-                    //người dùng nhập thiếu thông tin
-                    echo "<p style='color: red'>Vui lòng nhập đầy đủ thông tin</p>";
+                else
+                {
+                    echo "<p style='color:red'>Vui lòng nhập đầy đủ thông tin</p>";
                 }
             }
-            
         ?>
+
 </body>
 </html>

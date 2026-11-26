@@ -17,6 +17,11 @@
             margin: 10px 0;
             width: 100%;
         }
+        .i-text select {
+            padding: 5px 0;
+            margin: 10px 0;
+            width: 100%;
+        }
         button{
             padding: 5px 0;
             width: 100%;
@@ -45,12 +50,51 @@
             <div class="i-text">
                 <input type="text" name="quocGia" value="<?php echo $phim['quoc_gia'] ?>" id="" placeholder="Quốc Gia">
             </div>
+            <?php
+                $sqlTheLoai = " select * from the_loai";
+                $result = mysqli_query($conn,$sqlTheLoai);
+            ?>
+            <div class="i-text">
+                <select name="theLoai" id="">
+                    <?php 
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                    ?>
+                        <option value="<?php echo $row['id'] ?>"><?php echo $row['ten_the_loai']?></option>
+                    <?php
+                         }
+                    ?>   
+                </select>
+            </div>
+            
+            <?php
+                $sqlDaoDien = " select * from dao_dien";
+                $result = mysqli_query($conn,$sqlDaoDien);
+            ?>
+            <div class="i-text">
+                <select name="daoDienId" id="">
+                    <?php 
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                    ?>
+                        <option value="<?php echo $row['id'] ?>"><?php echo $row['ho_ten']?></option>
+                    <?php
+                         }
+                    ?>   
+                </select>
+            </div>
             <div class="i-text">
                 <input type="date" name="nam" value="<?php echo $phim['nam'] ?>" id="" placeholder="Năm">
             </div>
             <div class="i-text">
                 <input type="number" name="doTuoi" value="<?php echo $phim['do_tuoi'] ?>" id="" placeholder="Độ Tuổi">
             </div>
+            <!-- <div class="i-text">
+                <input type="text" name="trailer" value="<?php echo $phim['trailer'] ?>" id="" placeholder="Trailer">
+            </div>
+            <div class="i-text">
+                <input type="text" name="poster" value="<?php echo $phim['poster'] ?>" id="" placeholder="Poster">
+            </div> -->
             <div class="i-text">
                 <input type="text" name="moTa" value="<?php echo $phim['mo_ta'] ?>" id="" placeholder="Mô Tả">
             </div>
@@ -58,28 +102,47 @@
             <button>Cập nhật</button>
         </form>
         <?php
-            if(isset($_POST['tenPhim']) && 
-            isset($_POST['quocGia']) && 
-            isset($_POST['nam']) && 
+            if(isset($_POST['tenPhim']) &&
+            isset($_POST['quocGia']) &&
+            isset($_POST['theLoai']) &&
+            isset($_POST['daoDienId']) &&
+            isset($_POST['nam']) &&
             isset($_POST['doTuoi']) &&
-            isset($_POST['moTa']))
+            isset($_POST['moTa'])
+            //  &&
+            // isset($_POST['trailer']) &&
+            // isset($_POST['poster'])
+            )
             {
                 $tenPhim = $_POST['tenPhim'];
                 $quocGia = $_POST['quocGia'];
+                $theLoai = $_POST['theLoai'];
+                $dao_dien_id = $_POST['daoDienId'];
                 $nam = $_POST['nam'];
                 $doTuoi = $_POST['doTuoi'];
+                // $traile = $_POST['trailer'];
+                // $poster = $_POST['poster'];
                 $moTa = $_POST['moTa'];
-                if(!empty($tenPhim) && 
-                    !empty($quocGia) && 
-                    !empty($nam) && 
-                    !empty($doTuoi) &&
-                    !empty($moTa)
-                    ){
-                    $sql_update = "UPDATE `phim` SET `ten_phim`='$tenPhim',`quoc_gia`='$quocGia',`nam`='$nam',
+
+                if(!empty($tenPhim) &&
+                !empty($quocGia) &&
+                !empty($theLoai) &&
+                !empty($dao_dien_id) &&
+                !empty($nam) &&
+                !empty($doTuoi) &&
+                // !empty($trailer) &&
+                // !empty($poster) &&
+                !empty($moTa))
+                {
+                    $sql_update = "UPDATE `phim` SET `ten_phim`='$tenPhim',`quoc_gia`='$quocGia',
+                    `dao_dien_id`='$dao_dien_id',
+                    `nam`='$nam',
                     `do_tuoi`='$doTuoi',`mo_ta`='$moTa' WHERE `id`='$id'";
                     //echo $sql;
                     $result_update = mysqli_query($conn,$sql_update);
                     if($result_update){
+                        $sql_update_tl = "UPDATE `phim_the_loai` SET `the_loai_id`='$theLoai' WHERE `phim_id`='$id'";
+                        mysqli_query($conn, $sql_update_tl);
                         header("Location: index.php?page_layout=phim");
                     }
                     else{

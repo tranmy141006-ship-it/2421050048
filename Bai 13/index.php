@@ -20,6 +20,7 @@
 </head>
 <body>
     <?php
+        ob_start();
         session_start();
         if(!isset($_SESSION['dangnhap']) && $_SESSION['dangnhap'] = "thanhcong"){
             header("Location: dangnhap.php");
